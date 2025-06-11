@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-// Mock data to simulate API responses for the movie list
 const mockMovies = [
   {
     id: 1,
@@ -14,7 +13,7 @@ const mockMovies = [
     description: "A gripping psychological thriller about a detective racing against time to uncover the truth behind a series of mysterious disappearances in a secluded town. Filled with unexpected twists and turns, this film keeps you on the edge of your seat until the very end. The cinematography captures the eerie atmosphere of the remote setting perfectly, adding to the suspense.",
     director: "Jane Doe",
     cast: ["John Smith", "Emily White", "David Lee"],
-    trailer: "https://www.youtube.com/embed/dQw4w9WgXcQ?si=fLqS_c1aB3XvFhJv" // Dummy YouTube link
+    trailer: "https://www.youtube.com/embed/dQw4w9WgXcQ?si=fLqS_c1aB3XvFhJv" 
   },
   {
     id: 2,
@@ -109,7 +108,7 @@ const HomePage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate API call with a delay
+
     setLoading(true);
     setError(null);
     const timer = setTimeout(() => {
@@ -121,9 +120,9 @@ const HomePage = () => {
       } finally {
         setLoading(false);
       }
-    }, 1000); // Simulate network delay
+    }, 1000); 
 
-    return () => clearTimeout(timer); // Clean up timer
+    return () => clearTimeout(timer); 
   }, []);
 
   if (loading) {
